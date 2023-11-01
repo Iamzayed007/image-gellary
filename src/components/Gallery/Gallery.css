@@ -1,0 +1,23 @@
+/* src/components/ImageGallery.css */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(200px, 1fr));
+    gap: 10px;
+  }
+  
+  .image {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+  
+  .image img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .feature-image {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  
