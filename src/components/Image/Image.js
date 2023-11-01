@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useRef } from 'react'
 import { useDrag, useDrop } from 'react-dnd'
 const Image = ({index,image,moveCard,id}) => {
+  const [selectedImages, setSelectedImages] = useState({});
+  const [selectedId, setSelectedId] = useState();
     const ref = useRef(null)
     const [{ handlerId }, drop] = useDrop({
       accept: 'item',
@@ -54,8 +56,19 @@ const Image = ({index,image,moveCard,id}) => {
 
     const opacity = isDragging ? 0 : 1
     drag(drop(ref))
+
+
+
+    const handleCheckBox =(id)=>{
+console.log(id);
+
+    }
+
+
+
   return (
     <div  className={`image ${index === 0 ? 'feature-image' : ''}`} ref={ref} style={{  opacity }} data-handler-id={handlerId}>
+    <input type="checkbox" className='check-box' checked={image.isChecked} onChange={()=>handleCheckBox(id)} />
     <img src={image.url} alt={`Image ${index}`} />
   </div>
   )

@@ -15,46 +15,57 @@ export const imagesData = [
     {
       id:1,
       url:Image1,
+      isChecked:true,
     },
     {
       id:2,
       url: Image2,
+      isChecked:false,
     },
     {
       id:3,
       url: Image3,
+      isChecked:false,
     },
     {
       id:4,
       url: Image4,
+      isChecked:false,
     },
     {
       id:5,
       url: Image5,
+      isChecked:false,
     },
     {
       id:6,
-      url: Image6
+      url: Image6,
+      isChecked:false,
     },
     {
       id:7,
-      url: Image7
+      url: Image7,
+      isChecked:false,
     },
     {
       id:8,
-      url: Image8
+      url: Image8,
+      isChecked:false,
     },
     {
       id:9,
-      url: Image9
+      url: Image9,
+      isChecked:false,
     },
     {
       id:10,
-      url: Image10
+      url: Image10,
+      isChecked:false,
     },
     {
       id:11,
-      url: Image11
+      url: Image11,
+      isChecked:false,
     },
   
    
