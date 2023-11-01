@@ -5,6 +5,7 @@ import Gallery from './components/Gallery/Gallery';
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { DataProvider } from './contexts/DataContext';
+import Header from './components/Header/Header';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
 <DndProvider backend={HTML5Backend}>
   <DataProvider>
   <Container>
-<h1>Image</h1>
+  <Header/>
   <Gallery/>
   </Container>
   </DataProvider>

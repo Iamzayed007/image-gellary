@@ -15,7 +15,7 @@ export const imagesData = [
     {
       id:1,
       url:Image1,
-      isChecked:true,
+      isChecked:false,
     },
     {
       id:2,
