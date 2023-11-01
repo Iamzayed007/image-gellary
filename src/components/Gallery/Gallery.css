@@ -1,4 +1,4 @@
-/* src/components/ImageGallery.css */
+
 .image-gallery {
     display: grid;
     grid-template-columns: repeat(5, minmax(200px, 1fr));
