@@ -5,6 +5,7 @@ import { useCallback, useState } from 'react'
 import Image from '../Image/Image';
 import update from 'immutability-helper';
 import { imagesData } from '../../data/data';
+import { Container } from 'react-bootstrap';
 const Gallery = () => {
   const [images,setImages] = useState(imagesData)
 console.log(images);
@@ -31,9 +32,13 @@ console.log(images);
   }, [])
 
   return (
+    <>
+   
     <div className="image-gallery">
       {images.map((image, index) => renderCard(image, index))}
     </div>
+ 
+    </>
   );
 };
 
