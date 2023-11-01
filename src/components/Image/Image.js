@@ -3,7 +3,7 @@ import { useRef } from 'react'
 import { useDrag, useDrop } from 'react-dnd'
 import { useDataContext } from '../../contexts/DataContext'
 const Image = ({index,image,moveCard,id}) => {
-  const {images,setImages} = useDataContext()
+  const {images,setImages,count,setCount} = useDataContext()
   const [ischeck, setIsCheck] = useState(image.isChecked);
     const ref = useRef(null)
     const [{ handlerId }, drop] = useDrop({
@@ -68,9 +68,11 @@ const Image = ({index,image,moveCard,id}) => {
         if (  updatedItems[index].isChecked === false) {
           
           updatedItems[index].isChecked = true;
+          setCount(count+1)
         }
         else{
           updatedItems[index].isChecked = false;
+          setCount(count-1)
         }
   
         // Update the state with the new array

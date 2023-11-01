@@ -10,12 +10,15 @@ export function useDataContext() {
 
 export function DataProvider({ children }) {
 const [images,setImages] =useState(imagesData)
+const [count,setCount] =useState(0)
 
   return (
     <DataContext.Provider
       value={{
         images,
-        setImages
+        setImages,
+        count,
+        setCount
       }}
     >
       {children}
