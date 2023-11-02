@@ -77,9 +77,8 @@ const Image = ({ index, image, moveCard, id }) => {
 
   return (
     <div
-      className={`image ${index === 0 ? "feature-image" : ""} ${
-        image.isChecked ? "image-selected" : ""
-      }`}
+      className={`image ${index === 0 ? "feature-image" : ""} ${image.isChecked ? "image-selected" : ""
+        }`}
       ref={ref}
       style={{ opacity }}
       data-handler-id={handlerId}
@@ -90,7 +89,7 @@ const Image = ({ index, image, moveCard, id }) => {
         checked={image.isChecked}
         onChange={() => handleCheckBox(id)}
       />
-      <img src={image.url} alt={`Image ${index}`} />
+      <img src={image.url} alt="img" />
       <div className={`${image.isChecked ? "" : "overlay"}`}></div>
     </div>
   );

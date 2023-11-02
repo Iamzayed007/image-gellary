@@ -14,7 +14,7 @@ import Image11 from "../assets/images/image-11.jpeg"
 export const imagesData = [
     {
       id:1,
-      url:Image1,
+      url:Image11,
       isChecked:false,
     },
     {
@@ -64,7 +64,7 @@ export const imagesData = [
     },
     {
       id:11,
-      url: Image11,
+      url: Image1,
       isChecked:false,
     },
   

@@ -1,13 +1,14 @@
 
 import React from 'react';
 import './Gallery.css'
-import { useCallback, useState } from 'react'
+import { useCallback } from 'react'
 import Image from '../Image/Image';
 import update from 'immutability-helper';
 import { useDataContext } from '../../hooks/useDataContext';
+import imageIcon from '../../assets/images/image_icon.png'
 const Gallery = () => {
-  const {images,setImages} = useDataContext()
-console.log(images);
+  const { images, setImages } = useDataContext()
+  console.log(images);
   const moveCard = useCallback((dragIndex, hoverIndex) => {
     setImages((prevCards) =>
       update(prevCards, {
@@ -32,11 +33,15 @@ console.log(images);
 
   return (
     <>
-   
-    <div className="image-gallery">
-      {images.map((image, index) => renderCard(image, index))}
-    </div>
- 
+
+      <div className="image-gallery">
+        {images.map((image, index) => renderCard(image, index))}
+        <div className='add-image'>
+          <img src={imageIcon} alt="" />
+          <p>Add Images</p>
+        </div>
+      </div>
+
     </>
   );
 };

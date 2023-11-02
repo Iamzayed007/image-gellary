@@ -7,6 +7,23 @@
     background-color: #fff;
     padding: 40px 0px;
     border-radius: 0px 0px 10px 10px;
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+   
+    margin-left: 50px;
+    margin-right: 50px;
   }
-  
+  .add-image{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  width: 200px;
+  height: 200px;
+  border: 3px dashed rgb(218, 213, 213);
+  border-radius: 10px;
+  cursor: pointer;
+  }
+  .add-image img{
+    width: 30px;
+    height: 30px;
+    margin-bottom: 20px;
+  }
