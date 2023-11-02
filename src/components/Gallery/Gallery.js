@@ -4,11 +4,8 @@ import './Gallery.css'
 import { useCallback, useState } from 'react'
 import Image from '../Image/Image';
 import update from 'immutability-helper';
-import { imagesData } from '../../data/data';
-import { Container } from 'react-bootstrap';
-import { useDataContext } from '../../contexts/DataContext';
+import { useDataContext } from '../../hooks/useDataContext';
 const Gallery = () => {
-  // const [images,setImages] = useState(imagesData)
   const {images,setImages} = useDataContext()
 console.log(images);
   const moveCard = useCallback((dragIndex, hoverIndex) => {
