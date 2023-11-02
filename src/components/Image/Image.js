@@ -7,11 +7,12 @@ const Image = ({ index, image, moveCard, id }) => {
   const { images, setImages, count, setCount } = useDataContext();
   const ref = useRef(null);
 
-  const [{ handlerId }, drop] = useDrop({
+  const [{ handlerId ,isOver}, drop] = useDrop({
     accept: "item",
     collect(monitor) {
       return {
         handlerId: monitor.getHandlerId(),
+        isOver: !!monitor.isOver(),
       };
     },
     hover(item, monitor) {
@@ -56,13 +57,16 @@ const Image = ({ index, image, moveCard, id }) => {
     }),
   });
 
-  const opacity = isDragging ? 0 : 1;
+  let opacity = isDragging ? .5 : 1
+  const border = isOver ? '3px solid gray' : 'none'
+  const dropAreaStyles = {
+    opacity: isOver ? 0 : 1, 
+  };
   drag(drop(ref));
 
   const handleCheckBox = (id) => {
     const updatedItems = [...images];
     const index = updatedItems.findIndex((dt) => dt.id === id);
-    console.log(index);
     if (index !== -1) {
       if (updatedItems[index].isChecked === false) {
         updatedItems[index].isChecked = true;
@@ -77,10 +81,10 @@ const Image = ({ index, image, moveCard, id }) => {
 
   return (
     <div
-      className={`image ${index === 0 ? "feature-image" : ""} ${image.isChecked ? "image-selected" : ""
+      className={`image bg-white ${index === 0 ? "feature-image" : ""} ${image.isChecked ? "image-selected" : ""
         }`}
       ref={ref}
-      style={{ opacity }}
+      style={{ opacity,border }}
       data-handler-id={handlerId}
     >
       <input
@@ -89,7 +93,7 @@ const Image = ({ index, image, moveCard, id }) => {
         checked={image.isChecked}
         onChange={() => handleCheckBox(id)}
       />
-      <img src={image.url} alt="img" />
+      <img src={image.url} alt="img" style={dropAreaStyles} className="bg-white" />
       <div className={`${image.isChecked ? "" : "overlay"}`}></div>
     </div>
   );

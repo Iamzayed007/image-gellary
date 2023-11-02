@@ -8,7 +8,6 @@ import { useDataContext } from '../../hooks/useDataContext';
 import imageIcon from '../../assets/images/image_icon.png'
 const Gallery = () => {
   const { images, setImages } = useDataContext()
-  console.log(images);
   const moveCard = useCallback((dragIndex, hoverIndex) => {
     setImages((prevCards) =>
       update(prevCards, {
