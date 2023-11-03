@@ -18,6 +18,7 @@ const Header = () => {
                 type="checkbox"
                 checked={count > 0 ? true : false}
                 className="mt-1"
+                readOnly
               />
               <h5 className="bg-white my-1  font-size-20">{count} Files Selected</h5>
             </div>
