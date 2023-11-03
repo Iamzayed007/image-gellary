@@ -57,12 +57,20 @@ const Image = ({ index, image, moveCard, id }) => {
     }),
   });
 
-  let opacity = isDragging ? .5 : 1
-  const border = isOver ? '3px solid gray' : 'none'
+
+const cardStyles ={
+  opacity : isDragging ? 0 : 1,
+  border : isOver ? '3px solid gray' : 'none',
+  transform : isOver ? 'translateY(10px)' : 'translateY(0)'
+}
+
   const dropAreaStyles = {
     opacity: isOver ? 0 : 1, 
   };
+
+
   drag(drop(ref));
+
 
   const handleCheckBox = (id) => {
     const updatedItems = [...images];
@@ -84,7 +92,7 @@ const Image = ({ index, image, moveCard, id }) => {
       className={`image bg-white ${index === 0 ? "feature-image" : ""} ${image.isChecked ? "image-selected" : ""
         }`}
       ref={ref}
-      style={{ opacity,border }}
+      style={cardStyles}
       data-handler-id={handlerId}
     >
       <input
