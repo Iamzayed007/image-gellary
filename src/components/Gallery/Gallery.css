@@ -29,6 +29,17 @@
   height: 30px;
   margin-bottom: 20px;
 }
+@media (max-width: 1400px) {
+  .image-gallery {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .add-image {
+    width: 180px;
+    height: 185px;
+  }
+  
+}
 @media (max-width: 1200px) {
  
   .add-image {
