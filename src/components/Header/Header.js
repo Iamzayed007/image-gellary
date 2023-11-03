@@ -20,12 +20,12 @@ const Header = () => {
                 className="mt-1"
                 readOnly
               />
-              <h5 className="bg-white my-1  font-size-20">{count} Files Selected</h5>
+              <h5 className="bg-white my-1">{count} Files Selected</h5>
             </div>
           ) : (
             <div className="bg-white">
 
-              <h5 className="bg-white gallery font-size-20 pb-2">Gallery</h5>
+              <h5 className="bg-white gallery pb-2">Gallery</h5>
             </div>
           )}
         </div>
